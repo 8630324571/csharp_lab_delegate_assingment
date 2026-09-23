@@ -1,0 +1,21 @@
+using System;
+
+namespace Dotnet_Lab_Assignment_4
+{
+    class Program1
+    {
+        delegate void MyDelegate(string message);
+
+        static void ShowMessage(string message)
+        {
+            Console.WriteLine(message);
+        }
+
+        static void Main()
+        {
+            MyDelegate del = new MyDelegate(ShowMessage);
+
+            del("Hii from delegate");
+        }
+    }
+}
