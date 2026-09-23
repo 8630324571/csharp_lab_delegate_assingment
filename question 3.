@@ -1,0 +1,27 @@
+using System;
+namespace Dotnet_Lab_Assignment_4
+{
+    class Program3
+    {
+        delegate void myDelegate(string name);
+        static void method1(string name)
+        {
+            Console.WriteLine("Method 1 " + name);
+        }
+        static void method2(string name)
+        {
+            Console.WriteLine("Method 2 " + name);
+        }
+        static void Main()
+        {
+            myDelegate del1 = method1;
+            Console.WriteLine("Hii from Unicast delegate");
+            del1("Abhishek");
+
+            myDelegate del2 = method1;
+            del2 += method2;
+            Console.WriteLine("\nHii from Multicast Delegate");
+            del2("Naman");
+        }
+    }
+}
