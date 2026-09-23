@@ -1,0 +1,31 @@
+using System;
+namespace Dotnet_Lab_Assignment_4
+{
+    class Program5
+    {
+        delegate void MyDelegate();
+        static void Email()
+        {
+            Console.Write("Email");
+        }
+        static void Sms()
+        {
+            Console.WriteLine("Sms");
+        }
+        static void Whatsapp()
+        {
+            Console.WriteLine("Whatsapp Messages");
+        }
+        static void Main()
+        {
+            MyDelegate del = new MyDelegate(Email);
+            Console.WriteLine("My email");
+
+            del += Sms;
+            Console.WriteLine("Send Sms");
+
+            del += Whatsapp;
+            Console.WriteLine("Send Whatsapp messages");
+        }
+    }
+}
