@@ -1,0 +1,58 @@
+using System;
+
+namespace Dotnet_Lab_Assignment_4
+{
+    class Program6
+    {
+        delegate double MyDelegate(double salary);
+
+        static double Salary(double salary)
+        {
+            Console.WriteLine("Basic: " + salary);
+            return salary;
+        }
+
+        static double HRASalary(double salary)
+        {
+            double hra = salary * 0.2;
+            hra = hra + salary;
+            Console.WriteLine("HRASalary: " + hra);
+            return hra;
+        }
+
+        static double DASalary(double salary)
+        {
+            double da = salary * 0.1;
+            da = da + salary;
+            Console.WriteLine("DASalary: " + da);
+            return da;
+        }
+
+        static double BonusSalary(double salary)
+        {
+            double bonus = salary * 0.15;
+            bonus = bonus + salary;
+            Console.WriteLine("BonusSalary: " + bonus);
+            return bonus;
+        }
+
+        public static void Main()
+        {
+            Console.Write("Enter salary: ");
+            double bs = Convert.ToDouble(Console.ReadLine());
+            MyDelegate del;
+
+            del = Salary;
+            del(bs);
+
+            del = HRASalary;
+            del(bs);
+
+            del = DASalary;
+            del(bs);
+
+            del = BonusSalary;
+            del(bs);
+        }
+    }
+}
